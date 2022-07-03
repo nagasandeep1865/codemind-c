@@ -1,52 +1,55 @@
 #include<stdio.h>
-int ispal(int x)
+int reverse(int a)
 {
-    int y,d,r=0;
-    y=x;
-    while(y)
+    int rev=0,r,temp;
+    temp=a;
+    while(a>0)
     {
-        d=y%10;
-        r=r*10+d;
-        y=y/10;
+        r=a%10;
+        rev=(rev*10)+r;
+        a=a/10;
     }
-    if(x==r)
+    if(temp==rev)
     {
         return 1;
+        
     }
-    else
-    {
-        return 0;
-    }
+    return 0;
 }
 int main()
 {
-    int n,pp,np;
+    int i,n,j,s,v,sf=0,df=0;
     scanf("%d",&n);
-    for(pp=n-1;;pp-=1)
+    for(i=n+1;i<=10000;i++)
     {
-        if(ispal(pp))
+        if(reverse(i)==1)
         {
+            s=i;
+            df=i-n;
             break;
         }
     }
-    for(np=n+1;;np+=1)
+    for(j=n-1;j>=1;j--)
     {
-        if(ispal(np))
+        if(reverse(j)==1)
         {
+            v=j;
+            sf=n-j;
             break;
         }
     }
-    if(n-pp>np-n)
+    if(df>sf)
+    {
+        printf("%d",v);
+    }
+    else if(df==sf)
+    {
+        printf("%d %d",v,s);
+    }
+    else
+    {
+        printf("%d",s);
+        
+    }
     
-    {
-        printf("%d",np);
-    }
-    if(n-pp<np-n)
-    {
-        printf("%d",pp);
-    }
-    if(n-pp==np-n)
-    {
-        printf("%d %d",pp,np);
-    }
 }

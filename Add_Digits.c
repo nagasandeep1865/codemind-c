@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n,sum=0;
+    int n, sum=0;
     scanf("%d",&n);
     while(n>9)
     {
@@ -13,5 +13,5 @@ int main()
         }
         n=sum;
     }
-     printf("%d",sum);
+    printf("%d",sum);
 }

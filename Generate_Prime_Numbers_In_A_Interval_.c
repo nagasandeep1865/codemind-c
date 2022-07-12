@@ -21,8 +21,8 @@ int isitprime(int n)
 int main()
 {
 	int s,e,i;
-	scanf("%d",&s);
-	scanf("%d",&e);
+	scanf("%d/n",&s);
+	scanf("%d/n",&e);
 	for(i=s;i<=e;i++)
 	{
 		if(isitprime(i)==1)
